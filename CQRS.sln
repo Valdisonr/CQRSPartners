@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.CQRS", "API.CQRS\API.CQRS.csproj", "{A041EA28-1D5B-4BC6-BD64-3BDB78C3FB02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.CQRS", "API.CQRS\API.CQRS.csproj", "{A041EA28-1D5B-4BC6-BD64-3BDB78C3FB02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.CQRS", "Domain.CQRS\Domain.CQRS.csproj", "{1E4F9144-3D68-4C12-BB13-D946ADE0B178}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.CQRS", "Domain.CQRS\Domain.CQRS.csproj", "{1E4F9144-3D68-4C12-BB13-D946ADE0B178}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.DataCQRS", "Infra.CQRS\Infra.DataCQRS.csproj", "{2340917B-F282-4AD3-8491-C7717F913461}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Data.CQRS", "Infra.CQRS\Infra.Data.CQRS.csproj", "{2340917B-F282-4AD3-8491-C7717F913461}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.CQRS", "Application.CQRS\Application.CQRS.csproj", "{63D92480-3E44-4F87-A792-CCD82CF39D17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.CQRS", "Application.CQRS\Application.CQRS.csproj", "{63D92480-3E44-4F87-A792-CCD82CF39D17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.CQRS", "Test.CQRS\Test.CQRS.csproj", "{FF061746-9097-4E3D-82E7-3DAD82DB928F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.CQRS", "Test.CQRS\Test.CQRS.csproj", "{FF061746-9097-4E3D-82E7-3DAD82DB928F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.CrossCutting.CQRS", "Infra.crossCurting\Infra.CrossCutting.CQRS.csproj", "{ADFDBCA8-742E-4D84-B698-AE38FDAE18EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.CrossCutting.CQRS", "Infra.crossCurting\Infra.CrossCutting.CQRS.csproj", "{ADFDBCA8-742E-4D84-B698-AE38FDAE18EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

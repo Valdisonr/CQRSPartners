@@ -10,14 +10,16 @@ namespace Domain.CQRS.Entities
   
         public sealed class Movimento
         {
-            public int IdMovimento { get; private set; }
-            public EnumTipoMovimento EnumTipoMovimento { get;private set; } // Enum para Entrada ou Saída
-            public DateTime DataMovimento { get; private set; }
-            public int Quantidade { get; private set; }
-            public int ProdutoId { get; private set; }
+        public int IdMovimento { get; private set; }
+        public EnumTipoMovimento EnumTipoMovimento { get; private set; }
+        public int? Quantidade { get; private set; }
+        public decimal? ValorUnitario { get; private set; }
+        public decimal? ValorTotal { get; private set; }
+        public DateTime? DataMovimento { get; private set; }
 
-            public decimal PrecoUnitario { get;private set; }
-            public decimal ValorTotal { get;private set; }
-        }
+        // Chave estrangeira para Produto
+        public int ProdutoId { get; private set; }
+        public Produto? Produto { get; set; }
+    }
     }
 

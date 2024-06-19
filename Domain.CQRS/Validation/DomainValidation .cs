@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.CQRS.Validation
 {
-    public  class DomainValidation:Exception
+    public  class DomainValidation : Exception
     {
         public DomainValidation(string error):base(error)
         { }

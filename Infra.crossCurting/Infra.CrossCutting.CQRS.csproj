@@ -9,7 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Application.CQRS\Application.CQRS.csproj" />
     <ProjectReference Include="..\Domain.CQRS\Domain.CQRS.csproj" />
-    <ProjectReference Include="..\Infra.CQRS\Infra.DataCQRS.csproj" />
+    <ProjectReference Include="..\Infra.CQRS\Infra.Data.CQRS.csproj" />
   </ItemGroup>
 
 </Project>

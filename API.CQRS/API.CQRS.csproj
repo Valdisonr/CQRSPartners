@@ -11,8 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infra.CQRS\Infra.DataCQRS.csproj" />
+    <ProjectReference Include="..\Infra.CQRS\Infra.Data.CQRS.csproj" />
     <ProjectReference Include="..\Infra.crossCurting\Infra.CrossCutting.CQRS.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
