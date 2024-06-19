@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Infra.Data.CQRS.Contexto;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -30,18 +34,15 @@ public static class DependecyInjection
                 return connection;
             });
 
-            services.AddScoped<IMemberRepository, MemberRepository>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IMemberDapperRepository, MemberDapperRepository>();
-
+      
             var myhandlers = AppDomain.CurrentDomain.Load("CleanArch.Application");
             services.AddMediatR(cfg =>
             {
                 cfg.RegisterServicesFromAssemblies(myhandlers);
-                cfg.AddOpenBehavior(typeof(ValidationBehaviour<,>));
+          //      cfg.AddOpenBehavior(typeof(ValidationBehaviour<,>));
             });
 
-            services.AddValidatorsFromAssembly(Assembly.Load("CleanArch.Application"));
+      //      services.AddValidatorsFromAssembly(Assembly.Load("CleanArch.Application"));
 
             return services;
         }

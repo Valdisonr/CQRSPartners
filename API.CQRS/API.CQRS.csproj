@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Infra.CQRS\Infra.Data.CQRS.csproj" />
-    <ProjectReference Include="..\Infra.crossCurting\Infra.CrossCutting.CQRS.csproj" />
+    <ProjectReference Include="..\Infra.crossCurting\InfraCrossCutting.CQRS.csproj" />
   </ItemGroup>
 
   <ItemGroup>

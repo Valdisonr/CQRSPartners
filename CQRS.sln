@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.CQRS", "Applica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.CQRS", "Test.CQRS\Test.CQRS.csproj", "{FF061746-9097-4E3D-82E7-3DAD82DB928F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.CrossCutting.CQRS", "Infra.crossCurting\Infra.CrossCutting.CQRS.csproj", "{ADFDBCA8-742E-4D84-B698-AE38FDAE18EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfraCrossCutting.CQRS", "Infra.crossCurting\InfraCrossCutting.CQRS.csproj", "{ADFDBCA8-742E-4D84-B698-AE38FDAE18EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
