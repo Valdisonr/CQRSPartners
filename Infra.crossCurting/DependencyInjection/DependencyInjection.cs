@@ -1,4 +1,8 @@
-﻿using Infra.Data.CQRS.Contexto;
+﻿using Application.CQRS.Validations;
+using Domain.CQRS.Interfaces;
+using FluentValidation;
+using Infra.Data.CQRS.Contexto;
+using Infra.Data.CQRS.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,13 +15,16 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.CQRS.DepencyInjection
+namespace InfraCrossCutting.CQRS.DependencyInjection
 {
-public static class DependecyInjection
+    public static class DependencyInjection
     {
+
+
+
         public static IServiceCollection AddInfrastructure(
-                 this IServiceCollection services,
-                 IConfiguration configuration)
+                this IServiceCollection services,
+                IConfiguration configuration)
         {
             var mySqlConnection = configuration
                                   .GetConnectionString("DefaultConnection");
@@ -34,15 +41,26 @@ public static class DependecyInjection
                 return connection;
             });
 
-      
-            var myhandlers = AppDomain.CurrentDomain.Load("CleanArch.Application");
+
+
+
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+
+
+            //services.AddScoped<IMemberRepository, MemberRepository>();
+
+            //services.AddScoped<IMemberDapperRepository, MemberDapperRepository>();
+
+            var myhandlers = AppDomain.CurrentDomain.Load("Application.CQRS");
             services.AddMediatR(cfg =>
             {
                 cfg.RegisterServicesFromAssemblies(myhandlers);
-          //      cfg.AddOpenBehavior(typeof(ValidationBehaviour<,>));
+                 cfg.AddOpenBehavior(typeof(ValidationBehaviour<,>));
             });
 
-      //      services.AddValidatorsFromAssembly(Assembly.Load("CleanArch.Application"));
+            services.AddValidatorsFromAssembly(Assembly.Load("Application.CQRS"));
 
             return services;
         }

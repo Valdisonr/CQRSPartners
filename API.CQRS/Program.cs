@@ -1,3 +1,9 @@
+
+using API.CQRS.Filters;
+using InfraCrossCutting.CQRS.DependencyInjection;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +12,18 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//registro dos serviços
+
+builder.Services.AddInfrastructure(builder.Configuration);
+
+
+// Registra o filtro de exceção personalizado
+builder.Services.AddMvc(options =>
+{
+    options.Filters.Add(new ExceptionFilter());
+});
+
 
 var app = builder.Build();
 

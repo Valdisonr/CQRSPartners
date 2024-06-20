@@ -41,8 +41,14 @@ namespace Infra.Data.CQRS.EntityConfiguration
             builder.Property(e => e.DtUpdate)
                    .HasDefaultValueSql("GETDATE()")
                    .ValueGeneratedOnAddOrUpdate();
+
+            builder.Property(x => x.ProdutoId).IsRequired();
+            builder.HasOne(x=>x.Produto).WithMany(x=>x.Estoques)
+                .HasForeignKey(x=>x.ProdutoId).OnDelete(DeleteBehavior.NoAction);
+               
        
            
+
 
 
 

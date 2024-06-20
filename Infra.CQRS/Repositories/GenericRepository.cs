@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Infra.Data.CQRS.Repositories
 {
-    public class RepositoryGeneric<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly DbContextOptions<ContextoDB> _optionsBulder;
 
-        public RepositoryGeneric()
+        public GenericRepository()
         {
             _optionsBulder = new DbContextOptions<ContextoDB>();
         }

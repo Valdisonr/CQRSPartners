@@ -5,8 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.CQRS.Validation;
+
 using System.Text.Json.Serialization;
+using Domain.CQRS.Validation;
 
 namespace Domain.CQRS.Entities
 {
@@ -14,16 +15,15 @@ namespace Domain.CQRS.Entities
     {
 
 
-        public int ProdutoId { get; set; }
-        public string Nome { get; set; }
-        public string? Descricao { get; set; }
-        public string? CodigoBarra { get; set; }
-        //public int CategoriaId { get; set; }
-        //public Categoria Categoria { get; set; }
-        public DateTime? DataCriacao { get; set; } 
-        public DateTime? DataAtualizacao { get; set; }
+        public int ProdutoId { get; private set; }
+        public string Nome { get; private set; }
+        public string? Descricao { get; private set; }
+        public string? CodigoBarra { get; private set; }
+    
+        public DateTime? DataCriacao { get; private set; } 
+        public DateTime? DataAtualizacao { get; private set; }
 
-        public ICollection<Estoque>? Estoque { get; set; }
+        public ICollection<Estoque>? Estoques { get; set; }
 
 
 

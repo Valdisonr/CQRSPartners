@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Infra.Data.CQRS.Repositories
 {
-    public class ProdutoRepository:RepositoryGeneric<Produto>,IProdutoRepository 
+    public class ProdutoRepository:GenericRepository<Produto>,IProdutoRepository 
     { 
 
 
