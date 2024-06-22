@@ -50,7 +50,7 @@ namespace InfraCrossCutting.CQRS.DependencyInjection
 
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
-
+            services.AddScoped<IProdutoDapperRepository,ProdutoDapperRepository>();
             //services.AddScoped<IMemberRepository, MemberRepository>();
 
             //services.AddScoped<IMemberDapperRepository, MemberDapperRepository>();
