@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MediatR;
 
+
 namespace InfraCrossCutting.CQRS.DependencyInjection
 {
     public static class DependencyInjection
@@ -43,17 +44,19 @@ namespace InfraCrossCutting.CQRS.DependencyInjection
             });
 
 
-
+       
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            services.AddScoped<IEstoqueRepository, EstoqueRepository>();
 
             services.AddScoped<IProdutoDapperRepository,ProdutoDapperRepository>();
             //services.AddScoped<IMemberRepository, MemberRepository>();
-
+          
             //services.AddScoped<IMemberDapperRepository, MemberDapperRepository>();
+            
 
             var myhandlers = AppDomain.CurrentDomain.Load("Application.CQRS");
             services.AddMediatR(cfg =>

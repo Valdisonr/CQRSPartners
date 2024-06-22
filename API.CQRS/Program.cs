@@ -19,6 +19,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructure(builder.Configuration);
 
 
+
 // Registra o filtro de exceção personalizado
 builder.Services.AddMvc(options =>
 {
@@ -26,7 +27,9 @@ builder.Services.AddMvc(options =>
 });
 
 
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
