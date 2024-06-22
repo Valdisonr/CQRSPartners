@@ -14,6 +14,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using MediatR;
 
 namespace InfraCrossCutting.CQRS.DependencyInjection
 {
@@ -45,6 +46,7 @@ namespace InfraCrossCutting.CQRS.DependencyInjection
 
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
