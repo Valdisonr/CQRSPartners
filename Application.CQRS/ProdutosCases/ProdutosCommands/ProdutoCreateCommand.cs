@@ -16,12 +16,19 @@ namespace Application.CQRS.ProdutosCases.ProdutosCommands
     {
 
 
+
+        //Handler pode ficar em classe separada command
+
+
         public class ProdutoCreateCommandHanler : IRequestHandler<ProdutoCreateCommand, Produto>
         {
 
             private readonly IUnitOfWork _unitOfWork;
             private readonly IValidator<ProdutoCreateCommand> _validator;
             private readonly IMediator _mediator;
+
+
+
 
             public async Task<Produto> Handle(ProdutoCreateCommand request, CancellationToken cancellationToken)
             {
@@ -34,6 +41,7 @@ namespace Application.CQRS.ProdutosCases.ProdutosCommands
                 return newProduto;
               
             }
+
         }
 
     }
