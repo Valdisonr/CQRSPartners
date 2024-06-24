@@ -33,14 +33,14 @@ namespace Infra.Data.CQRS.EntityConfiguration
             builder.Property(e => e.ValorUnitario)
                     .HasPrecision(18, 2)
                    .HasDefaultValue(0.0m);
-
             builder.Property(e => e.DtCreate)
-                   .HasDefaultValueSql("GETDATE()")
+                   .HasDefaultValue(DateTime.UtcNow)// Define a DataCriacao com o valor atual UTC
                    .ValueGeneratedOnAdd();
 
             builder.Property(e => e.DtUpdate)
-                   .HasDefaultValueSql("GETDATE()")
+                      .HasDefaultValue(DateTime.UtcNow)// Define a DataCriacao com o valor atual UTC
                    .ValueGeneratedOnAddOrUpdate();
+
 
             builder.Property(x => x.ProdutoId).IsRequired();
             builder.HasOne(x=>x.Produto).WithMany(x=>x.Estoques)

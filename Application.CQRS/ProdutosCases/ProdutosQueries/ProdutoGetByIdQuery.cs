@@ -33,7 +33,8 @@ namespace Application.CQRS.ProdutosCases.ProdutosQueries
             {
 
                 var produtos=await _produtoDapperRepository.GetDapperProdutoById(request.ProdutoId);
-                throw new NotImplementedException();
+                return produtos;
+          //      throw new NotImplementedException();
             }
 
 

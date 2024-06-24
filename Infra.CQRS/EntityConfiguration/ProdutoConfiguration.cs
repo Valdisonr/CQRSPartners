@@ -25,11 +25,6 @@ namespace Infra.Data.CQRS.EntityConfiguration
 
 
 
-            // Validação customizada para o campo Nome
-            builder.Property(m => m.Nome)
-                   .IsRequired()
-                   .HasMaxLength(100);// Defina o tamanho máximo adequado
-
             // Configuração da Data de Criação e Atualização com valor padrão
             // Configuração da Data de Criação com valor padrão
 

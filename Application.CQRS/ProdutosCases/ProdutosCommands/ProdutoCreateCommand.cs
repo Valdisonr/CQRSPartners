@@ -24,16 +24,24 @@ namespace Application.CQRS.ProdutosCases.ProdutosCommands
         {
 
             private readonly IUnitOfWork _unitOfWork;
-            private readonly IValidator<ProdutoCreateCommand> _validator;
+          //  private readonly IValidator<ProdutoCreateCommand> _validator;
             private readonly IMediator _mediator;
 
 
+            public ProdutoCreateCommandHanler(IUnitOfWork unitOfWork,
+                                     
+                                        IMediator mediator)
+            {
+                _unitOfWork = unitOfWork;
+                //    _validator = validator;
+                _mediator = mediator;
+            }
 
 
             public async Task<Produto> Handle(ProdutoCreateCommand request, CancellationToken cancellationToken)
             {
                
-                _validator.ValidateAndThrow(request);
+              //  _validator.ValidateAndThrow(request);
                 var newProduto=new Produto(request.Nome,request.Descricao,request.CodigoBarra,request.DataCriacao,request.DataAtualizacao);
                 await _unitOfWork.ProdutoRepository.Adicionar(newProduto);
                 await _unitOfWork.CommitAsync();
