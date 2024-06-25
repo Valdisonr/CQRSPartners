@@ -63,16 +63,17 @@ namespace Domain.CQRS.Entities
         {
             ValidateDomain(produtoId, qtdEstoque, estoqueMinimo, estoqueMaximo, saldoAnterior, localizacao, valorUnitario, dtCreate, dtUpdate);
         }
+        private void ValidateDomain(int produtoId, int? qtdEstoque, int? estoqueMinimo, int? estoqueMaximo,
+                            int? saldoAnterior, string? localizacao, decimal valorUnitario, DateTime? dtCreate, DateTime? dtUpdate)
 
 
-        private void ValidateDomain( int produtoId, int? qtdEstoque, int? estoqueMinimo, int? estoqueMaximo,
-                                    int? saldoAnterior, string? localizacao, decimal valorUnitario, DateTime? dtCreate, DateTime? dtUpdate)
         {
-            //DomainValidation.When(estoqueId <= 0, "ID do Estoque inválido. O ID deve ser maior que zero.");
             DomainValidation.When(produtoId <= 0, "ID do Produto inválido. O ID deve ser maior que zero.");
             DomainValidation.When(valorUnitario < 0, "Valor unitário inválido. O valor deve ser maior ou igual a zero.");
+            DomainValidation.When(estoqueMinimo.HasValue && estoqueMinimo.Value < 0, "Estoque mínimo inválido. Deve ser maior ou igual a zero.");
+            DomainValidation.When(estoqueMaximo.HasValue && estoqueMaximo.Value < 0, "Estoque máximo inválido. Deve ser maior ou igual a zero.");
+            DomainValidation.When(estoqueMinimo.HasValue && estoqueMaximo.HasValue && estoqueMaximo.Value < estoqueMinimo.Value, "Estoque máximo não pode ser menor que estoque mínimo.");
 
-            //EstoqueId = estoqueId;
             ProdutoId = produtoId;
             QtdEstoque = qtdEstoque;
             EstoqueMinimo = estoqueMinimo;
@@ -85,5 +86,25 @@ namespace Domain.CQRS.Entities
         }
 
 
-    } 
+        //private void ValidateDomain( int produtoId, int? qtdEstoque, int? estoqueMinimo, int? estoqueMaximo,
+        //                            int? saldoAnterior, string? localizacao, decimal valorUnitario, DateTime? dtCreate, DateTime? dtUpdate)
+        //{
+        //    //DomainValidation.When(estoqueId <= 0, "ID do Estoque inválido. O ID deve ser maior que zero.");
+        //    DomainValidation.When(produtoId <= 0, "ID do Produto inválido. O ID deve ser maior que zero.");
+        //    DomainValidation.When(valorUnitario < 0, "Valor unitário inválido. O valor deve ser maior ou igual a zero.");
+
+        //    //EstoqueId = estoqueId;
+        //    ProdutoId = produtoId;
+        //    QtdEstoque = qtdEstoque;
+        //    EstoqueMinimo = estoqueMinimo;
+        //    EstoqueMaximo = estoqueMaximo;
+        //    SaldoAnterior = saldoAnterior;
+        //    Localizacao = localizacao;
+        //    ValorUnitario = valorUnitario;
+        //    DtCreate = dtCreate ?? DateTime.UtcNow;
+        //    DtUpdate = dtUpdate ?? DateTime.UtcNow;
+        //}
+
+
+    }
 }

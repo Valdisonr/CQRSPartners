@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.CQRS.Validations
+namespace Application.CQRS.ProdutosCases.ProdutosValidations
 {
     public class ProdutoCreateCommandValidator : AbstractValidator<ProdutoCreateCommand>
     {
