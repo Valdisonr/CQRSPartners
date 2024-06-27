@@ -23,7 +23,7 @@ namespace Domain.CQRS.Entities
         public DateTime? DataCriacao { get; private set; } 
         public DateTime? DataAtualizacao { get; private set; }
 
-        public ICollection<Estoque>? Estoques { get; set; }
+        public ICollection<Estoque>? Estoque { get; set; }
 
 
 

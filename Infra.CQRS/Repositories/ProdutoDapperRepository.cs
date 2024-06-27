@@ -20,12 +20,15 @@ namespace Infra.Data.CQRS.Repositories
 
         public async Task<Produto> GetDapperProdutoById(int id)
         {
-            string query = "SELECT * FROM PRODUTOS WHERE ProdutoId = @Id";
+
+            string query = "SELECT * FROM PRODUTO WHERE ProdutoId = @Id";
             return await _dbConnection.QueryFirstOrDefaultAsync<Produto>(query, new { Id = id });
+        
+        
         }
         public async Task<IEnumerable<Produto>> GetDapperProdutos()
         {
-            string query = "SELECT * FROM PRODUTOS";
+            string query = "SELECT * FROM PRODUTO";
             return await _dbConnection.QueryAsync<Produto>(query);
             
         }

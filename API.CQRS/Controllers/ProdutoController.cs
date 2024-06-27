@@ -38,7 +38,15 @@ namespace API.CQRS.Controllers
         public async Task<IActionResult> CreateProduto(ProdutoCreateCommand command)
         {
             var createdProduto = await _mediator.Send(command);
-            return CreatedAtAction(nameof(GetProduto), new { id = createdProduto.ProdutoId }, createdProduto);
+
+            if (createdProduto != null)
+            {
+                return Ok("Produto incluído com sucesso!");
+            }
+            else
+            {
+                return BadRequest("Falha ao incluir o produto.");
+            }
         }
 
 

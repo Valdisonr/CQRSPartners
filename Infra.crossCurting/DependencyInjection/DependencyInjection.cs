@@ -50,13 +50,16 @@ namespace InfraCrossCutting.CQRS.DependencyInjection
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
-            services.AddScoped<IEstoqueRepository, EstoqueRepository>();
+            services.AddScoped<IProdutoDapperRepository, ProdutoDapperRepository>();
 
-            services.AddScoped<IProdutoDapperRepository,ProdutoDapperRepository>();
-            //services.AddScoped<IMemberRepository, MemberRepository>();
-          
-            //services.AddScoped<IMemberDapperRepository, MemberDapperRepository>();
-            
+
+            services.AddScoped<IEstoqueRepository, EstoqueRepository>();
+            services.AddScoped<IEstoqueDapperRepository, EstoqueDapperRepository>();
+
+
+
+
+
 
             var myhandlers = AppDomain.CurrentDomain.Load("Application.CQRS");
             services.AddMediatR(cfg =>

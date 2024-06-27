@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="EstoqueCases\" />
+    <Folder Include="EstoqueCases\Estoque\" />
   </ItemGroup>
 
 </Project>

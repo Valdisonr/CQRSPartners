@@ -10,6 +10,7 @@ namespace Application.CQRS.ProdutosCases.ProdutosValidations
 {
     public class ProdutoCreateCommandValidator : AbstractValidator<ProdutoCreateCommand>
     {
+
         public ProdutoCreateCommandValidator()
         {
             RuleFor(c => c.Nome)
@@ -17,5 +18,8 @@ namespace Application.CQRS.ProdutosCases.ProdutosValidations
         .Length(4, 100).WithMessage("O Nome deve ter entre 4 e 150 caracteres");
 
         }
+
+
+
     }
 }

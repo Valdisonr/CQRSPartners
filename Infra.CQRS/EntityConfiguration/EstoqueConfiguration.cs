@@ -43,7 +43,7 @@ namespace Infra.Data.CQRS.EntityConfiguration
 
 
             builder.Property(x => x.ProdutoId).IsRequired();
-            builder.HasOne(x=>x.Produto).WithMany(x=>x.Estoques)
+            builder.HasOne(x=>x.Produto).WithMany(x=>x.Estoque)
                 .HasForeignKey(x=>x.ProdutoId).OnDelete(DeleteBehavior.NoAction);
                
        
@@ -53,12 +53,12 @@ namespace Infra.Data.CQRS.EntityConfiguration
 
 
 
-            // Dados de exemplo usando HasData
+            // Dados de exemplo
             builder.HasData(
                 new Estoque(1, 1, 100, 10, 200, 90, "A1", 50.0m, DateTime.UtcNow, DateTime.UtcNow),
                 new Estoque(2, 2, 150, 15, 250, 140, "A2", 55.0m, DateTime.UtcNow, DateTime.UtcNow),
                 new Estoque(3, 3, 200, 20, 300, 190, "A3", 60.0m, DateTime.UtcNow, DateTime.UtcNow)
-            // Adicione mais dados conforme necessário
+           
             );
         }
     }

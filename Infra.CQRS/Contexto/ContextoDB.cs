@@ -18,8 +18,8 @@ namespace Infra.Data.CQRS.Contexto
 
         }
 
-        public DbSet<Produto> Produtos { get; set; }
-        public DbSet<Estoque> Estoques { get; set; }
+        public DbSet<Produto> Produto { get; set; }
+        public DbSet<Estoque> Estoque { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
