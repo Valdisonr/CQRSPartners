@@ -14,7 +14,6 @@
     <ProjectReference Include="..\Application.CQRS\Application.CQRS.csproj" />
     <ProjectReference Include="..\Domain.CQRS\Domain.CQRS.csproj" />
     <ProjectReference Include="..\Infra.CQRS\Infra.Data.CQRS.csproj" />
-    <ProjectReference Include="..\Test.CQRS\Test.CQRS.csproj" />
   </ItemGroup>
 
 </Project>

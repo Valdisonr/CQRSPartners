@@ -15,12 +15,23 @@ namespace Infra.Data.CQRS.Repositories
     {
 
         private IProdutoRepository? _prodRepo;
+        private IEstoqueRepository? _estoqueRepo;
         private readonly ContextoDB _context;
 
         public UnitOfWork(ContextoDB context)
         {
             _context = context;
         }
+
+        public IEstoqueRepository EstoqueRepository
+        {
+            get
+            {
+                return _estoqueRepo = _estoqueRepo ??
+                    new EstoqueRepository(_context);
+            }
+        }
+        
 
         public IProdutoRepository ProdutoRepository
         {
@@ -31,10 +42,8 @@ namespace Infra.Data.CQRS.Repositories
             }
         }
 
-     //  public IProdutoRepository ProdutoRepository => throw new NotImplementedException();
-
-   //     public IEstoqueRepository EstoqueRepository => throw new NotImplementedException();
-
+       
+       
         public async Task CommitAsync()
         {
             await _context.SaveChangesAsync();

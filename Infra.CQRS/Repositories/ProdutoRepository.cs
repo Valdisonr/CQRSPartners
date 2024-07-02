@@ -18,6 +18,7 @@ namespace Infra.Data.CQRS.Repositories
     {
         private readonly ContextoDB _contextoDB;
 
+      
 
         public ProdutoRepository(ContextoDB contexto) : base(contexto)
         {

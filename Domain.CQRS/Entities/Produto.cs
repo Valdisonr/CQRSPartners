@@ -23,7 +23,7 @@ namespace Domain.CQRS.Entities
         public DateTime? DataCriacao { get; private set; } 
         public DateTime? DataAtualizacao { get; private set; }
 
-        public ICollection<Estoque>? Estoque { get; set; }
+        public ICollection<Estoque> Estoque { get; set; }
 
 
 
@@ -48,6 +48,13 @@ namespace Domain.CQRS.Entities
             ValidateDomain(nome, descricao, codigoBarra, dataCriacao, dataAtualizacao);
         }
 
+        public Produto(string nome, string descricao, string codigoBarra, DateTime dataCriacao)
+        {
+            Nome = nome;
+            Descricao = descricao;
+            CodigoBarra = codigoBarra;
+            DataCriacao = dataCriacao;
+        }
 
         public void Update(string? nome, string? descricao, string? codigoBarra, DateTime? dataCriacao, DateTime? dataAtualizacao)
         {

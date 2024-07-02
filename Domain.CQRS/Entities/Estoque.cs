@@ -31,10 +31,10 @@ namespace Domain.CQRS.Entities
         // Construtor parametrizado com validações
 
         public Estoque(int produtoId, int? qtdEstoque, int? estoqueMinimo, int? estoqueMaximo,
-                       int? saldoAnterior, string? localizacao, decimal valorUnitario, DateTime? dtCreate, DateTime? dtUpdate)
+                       int? saldoAnterior, string? localizacao, decimal valorUnitario)
         {
 
-        ValidateDomain(produtoId, qtdEstoque, estoqueMinimo, estoqueMaximo, saldoAnterior, localizacao, valorUnitario, dtCreate, dtUpdate);
+        ValidateDomain(produtoId, qtdEstoque, estoqueMinimo, estoqueMaximo, saldoAnterior, localizacao, valorUnitario);
 
 
         }
@@ -51,7 +51,7 @@ namespace Domain.CQRS.Entities
 
             DomainValidation.When(estoqueId < 0, "Valor inválido.");
             EstoqueId = estoqueId;
-            ValidateDomain(produtoId, qtdEstoque, estoqueMinimo, estoqueMaximo, saldoAnterior, localizacao, valorUnitario, dtCreate, dtUpdate);
+            ValidateDomain(produtoId, qtdEstoque, estoqueMinimo, estoqueMaximo, saldoAnterior, localizacao, valorUnitario);
 
 
         }
@@ -59,12 +59,12 @@ namespace Domain.CQRS.Entities
 
 
         public void Update(int produtoId, int? qtdEstoque, int? estoqueMinimo, int? estoqueMaximo,
-                   int? saldoAnterior, string? localizacao, decimal valorUnitario, DateTime? dtCreate, DateTime? dtUpdate)
+                   int? saldoAnterior, string? localizacao, decimal valorUnitario)
         {
-            ValidateDomain(produtoId, qtdEstoque, estoqueMinimo, estoqueMaximo, saldoAnterior, localizacao, valorUnitario, dtCreate, dtUpdate);
+            ValidateDomain(produtoId, qtdEstoque, estoqueMinimo, estoqueMaximo, saldoAnterior, localizacao, valorUnitario);
         }
         private void ValidateDomain(int produtoId, int? qtdEstoque, int? estoqueMinimo, int? estoqueMaximo,
-                            int? saldoAnterior, string? localizacao, decimal valorUnitario, DateTime? dtCreate, DateTime? dtUpdate)
+                            int? saldoAnterior, string? localizacao, decimal valorUnitario)
 
 
         {
@@ -81,8 +81,7 @@ namespace Domain.CQRS.Entities
             SaldoAnterior = saldoAnterior;
             Localizacao = localizacao;
             ValorUnitario = valorUnitario;
-            DtCreate = dtCreate ?? DateTime.UtcNow;
-            DtUpdate = dtUpdate ?? DateTime.UtcNow;
+            
         }
 
 
