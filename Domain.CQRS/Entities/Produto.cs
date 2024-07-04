@@ -15,13 +15,13 @@ namespace Domain.CQRS.Entities
     {
 
 
-        public int ProdutoId { get; private set; }
-        public string Nome { get; private set; }
-        public string? Descricao { get; private set; }
-        public string? CodigoBarra { get; private set; }
+        public int ProdutoId { get; set; }
+        public string Nome { get; set; }
+        public string? Descricao { get; set; }
+        public string? CodigoBarra { get; set; }
     
-        public DateTime? DataCriacao { get; private set; } 
-        public DateTime? DataAtualizacao { get; private set; }
+        public DateTime? DataCriacao { get;  set; } 
+        public DateTime? DataAtualizacao { get;  set; }
 
         public ICollection<Estoque> Estoque { get; set; }
 

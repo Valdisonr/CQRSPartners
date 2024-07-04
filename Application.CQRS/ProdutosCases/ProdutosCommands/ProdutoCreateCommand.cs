@@ -43,8 +43,11 @@ namespace Application.CQRS.ProdutosCases.ProdutosCommands
                
               //  _validator.ValidateAndThrow(request);
                 var newProduto=new Produto(request.Nome,request.Descricao,request.CodigoBarra,request.DataCriacao,request.DataAtualizacao);
-                await _unitOfWork.ProdutoRepository.Adicionar(newProduto);
+                await _unitOfWork.ProdutoRepository.AddProduto(newProduto);
+
                 await _unitOfWork.CommitAsync();
+
+
                 await _mediator.Publish(new ProdutoCreatedNotification(newProduto), cancellationToken);
                 return newProduto;
               

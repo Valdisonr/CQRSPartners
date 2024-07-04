@@ -10,18 +10,18 @@ namespace Domain.CQRS.Entities
 {
     public sealed class Estoque
     {
-        public int EstoqueId { get; private set; }
+        public int EstoqueId { get; set; }
     
-        public int? QtdEstoque { get; private set; }
-        public int? EstoqueMinimo { get; private set; }
-        public int? EstoqueMaximo { get; private set; }
-        public int? SaldoAnterior { get; private set; }
-        public string? Localizacao { get; private set; }
-        public decimal ValorUnitario { get; private set; }
-        public DateTime? DtCreate { get; private set; }
-        public DateTime? DtUpdate { get; private set; }
+        public int? QtdEstoque { get; set; }
+        public int? EstoqueMinimo { get; set; }
+        public int? EstoqueMaximo { get; set; }
+        public int? SaldoAnterior { get; set; }
+        public string? Localizacao { get; set; }
+        public decimal ValorUnitario { get; set; }
+        public DateTime? DtCreate { get; set; }
+        public DateTime? DtUpdate { get; set; }
 
-        public int ProdutoId { get; private set; }
+        public int ProdutoId { get; set; }
         public Produto? Produto { get; set; }
 
 
@@ -39,8 +39,8 @@ namespace Domain.CQRS.Entities
 
         }
 
+       
 
- 
         public Estoque() { }
 
 

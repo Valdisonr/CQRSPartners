@@ -10,6 +10,7 @@ namespace Domain.CQRS.Interfaces
    public interface IProdutoRepository:IGenericRepository<Produto>
     {
 
+        Task AddProduto(Produto produto);
 
     }
 }

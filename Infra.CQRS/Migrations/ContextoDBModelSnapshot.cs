@@ -33,12 +33,12 @@ namespace Infra.Data.CQRS.Migrations
                     b.Property<DateTime?>("DtCreate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(5736));
+                        .HasDefaultValue(new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(5419));
 
                     b.Property<DateTime?>("DtUpdate")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(6388));
+                        .HasDefaultValue(new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(5709));
 
                     MySqlPropertyBuilderExtensions.UseMySqlComputedColumn(b.Property<DateTime?>("DtUpdate"));
 
@@ -89,8 +89,6 @@ namespace Infra.Data.CQRS.Migrations
                         new
                         {
                             EstoqueId = 1,
-                            DtCreate = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(9048),
-                            DtUpdate = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(9050),
                             EstoqueMaximo = 200,
                             EstoqueMinimo = 10,
                             Localizacao = "A1",
@@ -102,8 +100,6 @@ namespace Infra.Data.CQRS.Migrations
                         new
                         {
                             EstoqueId = 2,
-                            DtCreate = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(9083),
-                            DtUpdate = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(9084),
                             EstoqueMaximo = 250,
                             EstoqueMinimo = 15,
                             Localizacao = "A2",
@@ -115,8 +111,6 @@ namespace Infra.Data.CQRS.Migrations
                         new
                         {
                             EstoqueId = 3,
-                            DtCreate = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(9090),
-                            DtUpdate = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(9091),
                             EstoqueMaximo = 300,
                             EstoqueMinimo = 20,
                             Localizacao = "A3",
@@ -145,7 +139,7 @@ namespace Infra.Data.CQRS.Migrations
                     b.Property<DateTime?>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(457));
+                        .HasDefaultValue(new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3223));
 
                     b.Property<string>("Descricao")
                         .HasMaxLength(100)
@@ -165,8 +159,8 @@ namespace Infra.Data.CQRS.Migrations
                         {
                             ProdutoId = 1,
                             CodigoBarra = "123456",
-                            DataAtualizacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1336),
-                            DataCriacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1331),
+                            DataAtualizacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3552),
+                            DataCriacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3549),
                             Descricao = "Descrição do Produto 1",
                             Nome = "Produto 1"
                         },
@@ -174,8 +168,8 @@ namespace Infra.Data.CQRS.Migrations
                         {
                             ProdutoId = 2,
                             CodigoBarra = "654321",
-                            DataAtualizacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1355),
-                            DataCriacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1354),
+                            DataAtualizacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3560),
+                            DataCriacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3560),
                             Descricao = "Descrição do Produto 2",
                             Nome = "Produto 2"
                         },
@@ -183,8 +177,8 @@ namespace Infra.Data.CQRS.Migrations
                         {
                             ProdutoId = 3,
                             CodigoBarra = "789012",
-                            DataAtualizacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1360),
-                            DataCriacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1359),
+                            DataAtualizacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3562),
+                            DataCriacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3562),
                             Descricao = "Descrição do Produto 3",
                             Nome = "Produto 3"
                         },
@@ -192,8 +186,8 @@ namespace Infra.Data.CQRS.Migrations
                         {
                             ProdutoId = 4,
                             CodigoBarra = "345678",
-                            DataAtualizacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1364),
-                            DataCriacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1363),
+                            DataAtualizacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3563),
+                            DataCriacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3563),
                             Descricao = "Descrição do Produto 4",
                             Nome = "Produto 4"
                         },
@@ -201,8 +195,8 @@ namespace Infra.Data.CQRS.Migrations
                         {
                             ProdutoId = 5,
                             CodigoBarra = "901234",
-                            DataAtualizacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1368),
-                            DataCriacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1367),
+                            DataAtualizacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3565),
+                            DataCriacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3564),
                             Descricao = "Descrição do Produto 5",
                             Nome = "Produto 5"
                         },
@@ -210,8 +204,8 @@ namespace Infra.Data.CQRS.Migrations
                         {
                             ProdutoId = 6,
                             CodigoBarra = "567890",
-                            DataAtualizacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1371),
-                            DataCriacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1370),
+                            DataAtualizacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3566),
+                            DataCriacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3566),
                             Descricao = "Descrição do Produto 6",
                             Nome = "Produto 6"
                         },
@@ -219,8 +213,8 @@ namespace Infra.Data.CQRS.Migrations
                         {
                             ProdutoId = 7,
                             CodigoBarra = "234567",
-                            DataAtualizacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1374),
-                            DataCriacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1374),
+                            DataAtualizacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3567),
+                            DataCriacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3567),
                             Descricao = "Descrição do Produto 7",
                             Nome = "Produto 7"
                         },
@@ -228,8 +222,8 @@ namespace Infra.Data.CQRS.Migrations
                         {
                             ProdutoId = 8,
                             CodigoBarra = "890123",
-                            DataAtualizacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1378),
-                            DataCriacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1377),
+                            DataAtualizacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3568),
+                            DataCriacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3568),
                             Descricao = "Descrição do Produto 8",
                             Nome = "Produto 8"
                         },
@@ -237,8 +231,8 @@ namespace Infra.Data.CQRS.Migrations
                         {
                             ProdutoId = 9,
                             CodigoBarra = "456789",
-                            DataAtualizacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1381),
-                            DataCriacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1380),
+                            DataAtualizacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3570),
+                            DataCriacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3569),
                             Descricao = "Descrição do Produto 9",
                             Nome = "Produto 9"
                         },
@@ -246,8 +240,8 @@ namespace Infra.Data.CQRS.Migrations
                         {
                             ProdutoId = 10,
                             CodigoBarra = "012345",
-                            DataAtualizacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1384),
-                            DataCriacao = new DateTime(2024, 7, 2, 1, 48, 56, 223, DateTimeKind.Utc).AddTicks(1383),
+                            DataAtualizacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3571),
+                            DataCriacao = new DateTime(2024, 7, 3, 19, 16, 2, 198, DateTimeKind.Utc).AddTicks(3570),
                             Descricao = "Descrição do Produto 10",
                             Nome = "Produto 10"
                         });
