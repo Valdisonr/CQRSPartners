@@ -29,8 +29,8 @@ namespace Infra.Data.CQRS.Repositories
                 };
 
                 // Adiciona o newProduto ao contexto
-                _contextoDB.Set<Produto>().Add(newProduto);
-                await _contextoDB.SaveChangesAsync(); // Salva mudanças de forma assíncrona
+                _contextoDB.Set<Produto>().Add((Produto)newProduto);
+               await _contextoDB.SaveChangesAsync(); // Salva mudanças de forma assíncrona
 
                 // Agora que o newProduto foi salvo, podemos obter o ProdutoId gerado
                 var produtoId = newProduto.ProdutoId;
@@ -39,11 +39,19 @@ namespace Infra.Data.CQRS.Repositories
                 var newEstoque = new Estoque()
                 {
                     ProdutoId = produtoId,
+                  
                     DtCreate = DateTime.Now
                 };
 
-                _contextoDB.Set<Estoque>().Add(newEstoque);
-                await _contextoDB.SaveChangesAsync(); // Salva mudanças de forma assíncrona para persistir o Estoque
+
+
+                _contextoDB.Set<Estoque>().Add((Estoque)newEstoque);
+
+
+                // Utiliza o UnitOfWork para garantir a transação
+               
+
+                //      await _contextoDB.SaveChangesAsync(); // Salva mudanças de forma assíncrona para persistir o Estoque
             }
             catch (Exception ex)
             {

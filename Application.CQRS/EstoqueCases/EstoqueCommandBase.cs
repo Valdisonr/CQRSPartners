@@ -13,10 +13,10 @@ namespace Application.CQRS.EstoqueCases
 
         public int EstoqueId { get;  set; }
 
-        public int? QtdEstoque { get;  set; }
-        public int? EstoqueMinimo { get; set; }
-        public int? EstoqueMaximo { get;  set; }
-        public int? SaldoAnterior { get; set; }
+        public int  QtdEstoque { get;  set; }
+        public int EstoqueMinimo { get; set; }
+        public int EstoqueMaximo { get;  set; }
+        public int SaldoAnterior { get; set; }
         public string? Localizacao { get; set; }
         public decimal ValorUnitario { get; set; }
          public int ProdutoId { get; set; }

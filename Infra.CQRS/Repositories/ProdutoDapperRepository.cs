@@ -26,11 +26,16 @@ namespace Infra.Data.CQRS.Repositories
         
         
         }
+
+
+        
+            
         public async Task<IEnumerable<Produto>> GetDapperProdutos()
         {
             string query = "SELECT * FROM PRODUTO";
             return await _dbConnection.QueryAsync<Produto>(query);
-            
+
         }
     }
-}
+    }
+

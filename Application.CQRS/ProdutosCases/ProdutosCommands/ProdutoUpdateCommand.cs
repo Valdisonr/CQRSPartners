@@ -11,17 +11,16 @@ using System.Threading.Tasks;
 namespace Application.CQRS.ProdutosCases.ProdutosCommands
 {
 
-   
-  public sealed class ProdutoUpdateCommand:ProdutoCommandBase
+
+    public sealed class ProdutoUpdateCommand : ProdutoCommandBase
     {
         public int Id { get; set; }
 
 
-        public class ProdutoUpdateCommandHandler :  IRequestHandler<ProdutoUpdateCommand, Produto>
+
+        public class ProdutoUpdateCommandHandler : IRequestHandler<ProdutoUpdateCommand, Produto>
         {
             private readonly IUnitOfWork _unitOfWork;
-
-
             public ProdutoUpdateCommandHandler(IUnitOfWork unitOfWork)
             {
                 _unitOfWork = unitOfWork;
@@ -30,6 +29,11 @@ namespace Application.CQRS.ProdutosCases.ProdutosCommands
             public async Task<Produto> Handle(ProdutoUpdateCommand request, CancellationToken cancellationToken)
             {
 
+
+
+
+
+
                 var existingProduto = await _unitOfWork.ProdutoRepository.GetEntityById(request.Id);
 
                 if (existingProduto == null)
@@ -37,10 +41,10 @@ namespace Application.CQRS.ProdutosCases.ProdutosCommands
                     throw new InvalidOperationException("Produto not found");
                 }
 
-                existingProduto.Update(request.Nome, request.Descricao, request.CodigoBarra,request.DataCriacao, request.DataAtualizacao);
-             await   _unitOfWork.ProdutoRepository.Update(existingProduto);
+                existingProduto.Update(request.Nome, request.Descricao, request.CodigoBarra, request.DataCriacao, request.DataAtualizacao);
+                await _unitOfWork.ProdutoRepository.Update(existingProduto);
                 await _unitOfWork.CommitAsync();
-             
+
 
                 // Commit das mudanças
                 await _unitOfWork.CommitAsync();
@@ -49,6 +53,7 @@ namespace Application.CQRS.ProdutosCases.ProdutosCommands
             }
         }
     }
+    
 }
 
               

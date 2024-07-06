@@ -33,19 +33,5 @@ namespace API.CQRS.Controllers
         }
 
 
-        [HttpPost]
-        public async Task<IActionResult> CreateEstoque(EstoqueCreateCommand command)
-        {
-            var createdEstoque = await _mediator.Send(command);
-
-            if (createdEstoque != null)
-            {
-                return Ok("Item incluído com sucesso!");
-            }
-            else
-            {
-                return BadRequest("Falha ao incluir o Item.");
-            }
-        }
     }
 }

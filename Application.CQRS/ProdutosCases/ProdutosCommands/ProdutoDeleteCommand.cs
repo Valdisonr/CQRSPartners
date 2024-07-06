@@ -36,6 +36,8 @@ namespace Application.CQRS.ProdutosCases.ProdutosCommands
 
                 return produto;
             }
+
+           
         }
 
 

@@ -37,7 +37,7 @@ namespace Infra.Data.CQRS.EntityConfiguration
             // Dados de exemplo usando HasData
             builder.HasData(
                 new Produto(1, "Produto 1", "Descrição do Produto 1", "123456", DateTime.UtcNow, DateTime.UtcNow),
-                new Produto(2, "Produto 2", "Descrição do Produto 2", "654321", DateTime.UtcNow, DateTime.UtcNow),
+                new Produto (2, "Produto 2", "Descrição do Produto 2", "654321", DateTime.UtcNow, DateTime.UtcNow),
                 new Produto(3, "Produto 3", "Descrição do Produto 3", "789012", DateTime.UtcNow, DateTime.UtcNow),
                 new Produto(4, "Produto 4", "Descrição do Produto 4", "345678", DateTime.UtcNow, DateTime.UtcNow),
                 new Produto(5, "Produto 5", "Descrição do Produto 5", "901234", DateTime.UtcNow, DateTime.UtcNow),

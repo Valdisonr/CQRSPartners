@@ -35,10 +35,8 @@ namespace Domain.CQRS.Entities
             ValidateDomain(nome, descricao, codigoBarra, dataCriacao, dataAtualizacao);
         }
 
-
-        public Produto()
-        {
-        }
+        public Produto() { }
+      
 
         [JsonConstructor]
         public Produto(int produtoid, string? nome, string? descricao, string? codigoBarra, DateTime? dataCriacao, DateTime? dataAtualizacao)

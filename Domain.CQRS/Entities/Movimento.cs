@@ -19,7 +19,7 @@ namespace Domain.CQRS.Entities
 
         // Chave estrangeira para Produto
         public int ProdutoId { get; private set; }
-        public Produto? Produto { get; set; }
+        public Estoque? Produto { get; set; }
     }
     }
 

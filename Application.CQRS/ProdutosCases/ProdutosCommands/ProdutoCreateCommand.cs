@@ -20,7 +20,7 @@ namespace Application.CQRS.ProdutosCases.ProdutosCommands
         //Handler pode ficar em classe separada command
 
 
-        public class ProdutoCreateCommandHanler : IRequestHandler<ProdutoCreateCommand, Produto>
+        public class ProdutoCreateCommandHandler : IRequestHandler<ProdutoCreateCommand,Produto>
         {
 
             private readonly IUnitOfWork _unitOfWork;
@@ -28,7 +28,7 @@ namespace Application.CQRS.ProdutosCases.ProdutosCommands
             private readonly IMediator _mediator;
 
 
-            public ProdutoCreateCommandHanler(IUnitOfWork unitOfWork,
+            public ProdutoCreateCommandHandler(IUnitOfWork unitOfWork,
                                      
                                         IMediator mediator)
             {
@@ -53,6 +53,7 @@ namespace Application.CQRS.ProdutosCases.ProdutosCommands
               
             }
 
+            
         }
 
     }

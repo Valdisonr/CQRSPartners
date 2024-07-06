@@ -58,13 +58,22 @@ namespace Domain.CQRS.Entities
 
 
 
-        public void Update(int produtoId, int? qtdEstoque, int? estoqueMinimo, int? estoqueMaximo,
-                   int? saldoAnterior, string? localizacao, decimal valorUnitario)
+        public void UpdateEstoque(
+            int produtoId,
+            int qtdEstoque, 
+            int estoqueMinimo,
+            int estoqueMaximo,
+            int? saldoAnterior, 
+            string? localizacao,
+            decimal valorUnitario)
         {
-            ValidateDomain(produtoId, qtdEstoque, estoqueMinimo, estoqueMaximo, saldoAnterior, localizacao, valorUnitario);
+            ValidateDomain(produtoId, qtdEstoque, estoqueMinimo, 
+        estoqueMaximo, saldoAnterior, localizacao, valorUnitario);
         }
-        private void ValidateDomain(int produtoId, int? qtdEstoque, int? estoqueMinimo, int? estoqueMaximo,
-                            int? saldoAnterior, string? localizacao, decimal valorUnitario)
+        private void ValidateDomain(int produtoId, int? qtdEstoque, 
+            int? estoqueMinimo, int? estoqueMaximo,
+            int? saldoAnterior, string? localizacao, 
+            decimal valorUnitario)
 
 
         {
