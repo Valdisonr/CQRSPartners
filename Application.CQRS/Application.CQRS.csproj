@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Domain.CQRS\Domain.CQRS.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="EstoqueCases\Estoque\" />
-  </ItemGroup>
-
 </Project>

@@ -33,5 +33,15 @@ namespace API.CQRS.Controllers
         }
 
 
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEstoque(int id, EstoqueUpdateCommand command)
+        {
+            command.Id = id;
+            var updatedEstoque = await _mediator.Send(command);
+
+            return updatedEstoque != null ? Ok(updatedEstoque) : NotFound("Estoque not found.");
+        }
+
     }
 }

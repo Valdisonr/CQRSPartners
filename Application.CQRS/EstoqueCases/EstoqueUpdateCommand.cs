@@ -45,26 +45,7 @@ namespace Application.CQRS.EstoqueCases
                 return existingEstoque;
             }
 
-            //public async Task<Estoque> Handler(EstoqueUpdateCommand request, CancellationToken cancellationToken)
-            //{
-            //    var existingEstoque = await _unitOfWork.EstoqueRepository.GetEntityById(request.Id);
-
-            //    if (existingEstoque == null)
-            //    {
-            //        throw new InvalidOperationException("Item not found");
-            //    }
-            //}
-
-
-            //public async Task<Produto> Handle(EstoqueUpdateCommand request, CancellationToken cancellationToken)
-            //{
-
-            //    var existingEstoque = await _unitOfWork.EstoqueRepository.GetEntityById(request.Id);
-
-            //    if (existingEstoque == null)
-            //    {
-            //        throw new InvalidOperationException("Item not found");
-            //    }
+           
 
         }
         }

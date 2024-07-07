@@ -2,14 +2,14 @@ using Domain.CQRS.Entities;
 
 namespace Test
 {
-    public class TestProdutos
+    public class ProdutoTest
     {
         [Fact]
         public void CriarProduto()
         {
             var  Nome = "nome 01";
             var Descricao = "descricao 01";
-          var  CodigoBarra = "78910302";
+           var  CodigoBarra = "78910302";
            var DataCriacao =  DateTime.Now;
        
 
