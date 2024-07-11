@@ -15,6 +15,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 
 namespace InfraCrossCutting.CQRS.DependencyInjection
@@ -43,7 +44,26 @@ namespace InfraCrossCutting.CQRS.DependencyInjection
                 return connection;
             });
 
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }
+            ).AddJwtBearer(options=>
+            {
+                options.TokenValidationParameters=new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                {
+                    ValidateIssuer= true,
+                    ValidateAudience= true,
+                    ValidateLifetime= true,
+                    ValidateIssuerSigningKey= true,
 
+                    ValidIssuer="",
+                    ValidAudience="",
+                    IssuerSigningKey=""
+                }
+            }
+                );
        
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

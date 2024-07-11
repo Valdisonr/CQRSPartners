@@ -29,7 +29,7 @@ namespace Test
             var saldoanterior = 0;
             var localizacao = "teste de material";
             var valorunitario=120;
-            _estoqueRepository.Setup(x=>x.GetEntityById(produtoid)).ReturnsAsync(new E)
+         //   _estoqueRepository.Setup(x=>x.GetEntityById(produtoid)).ReturnsAsync(new E)
 
 
 
